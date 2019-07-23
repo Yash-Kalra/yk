@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+
+<html lang="en-us">
+<head>
+  <title>Client details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>   
+</head>
+
+
+<body>
+  <!--<li>
+     <img src={{a.cpics.url}} height="162" width="102">
+     <a href="/mypage/{{a.id}}"> <span style="color:orange"><strong>{{a.cname}}</strong></a> 
+     <textarea maxLength="5"> <span style="color:orange">{{a.cdet}}</textarea> 
+  </li>-->
+    {% load static %}
+    <div class="concontainer-fluid">
+        <link rel="stylesheet" type="text/css" href="{% static 'client/style.css' %}">
+           <div  class="jumbotron text-center";>
+                  <h1>Are You Looking for Client</h1>  
+           </div>
+       <div class="card-columns row ">
+          {% for a in all_det%}
+          <div class="col-sm-4">
+              <div class="card text-center " >
+                    <div class="card-body"> 
+                          <div class="maximage">
+                              <img class="card-header card-img-top" class="img-fluid" src="{{a.cpics.url}}" alt="Card image"  >
+                           </div>
+                              <h4 class="card-title">{{a.cname}}</h4>
+                                 <div class="maxdetails">
+                                     <p class="card-text">{{a.cdet}}</p>
+                                 </div>
+                                  <div class="card-footer">
+                                      <a href="/mypage/{{a.id}}" class="btn btn-primary">See Profile</a>
+                                  </div>
+                     </div>
+                </div>
+          </div>
+             {% endfor %}
+       </div>
+  </div>
+
+
+ 
+
+</body>
+
+</html>
+

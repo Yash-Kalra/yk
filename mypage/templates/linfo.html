@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<form action='\cinfo'>
+  <button type='submit'> Lawyer Details </button>
+</form>
+{% if latest_name_list %}
+    <ul>
+    {% for cdetails in latest_name_list %}
+        <li><a href="{% url 'mypage:cinfo' cdetails.name %}">{{ cdetalis.cname }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+
+</body>
+</html>

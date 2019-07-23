@@ -1,0 +1,19 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+{% if latest_name_list %}
+    <ul>
+    {% for cdetails in latest_name_list %}
+        <li>{{cdetalis.cname}}</li>
+        <li>{{cdetalis.cdet}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>
